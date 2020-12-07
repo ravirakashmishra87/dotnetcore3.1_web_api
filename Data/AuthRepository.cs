@@ -20,9 +20,6 @@ namespace coreAPI.Data
             this._DbContext = DbContext;
             this._configuration = Configuration;
         }
-
-
-
         private string CreateToken(User user)
         {
             List<Claim> claims = new List<Claim>
@@ -103,7 +100,6 @@ namespace coreAPI.Data
 
             return response;
         }
-
         public async Task<bool> UserExists(string username)
         {
             if (await _DbContext.Users.AnyAsync(u => u.Username.ToLower() == username.ToLower()))
